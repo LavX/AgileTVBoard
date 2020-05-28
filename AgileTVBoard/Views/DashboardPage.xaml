@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AgileTVBoard.Views.DashboardPage">
+    <ContentPage.Content BackgroundColor="#2B21B1">
+        <Grid BackgroundColor="#212121">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1.8*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0"  Grid.Row="0" Orientation="Horizontal"  HorizontalOptions="Center">
+                <Label Text="2020.06.05 (T -13)" TextColor="White" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal"  HorizontalOptions="Center">
+                <Label Text="Sprint 124 2020.06.04 - 2020.06.18" TextColor="White" VerticalOptions="Center"/>
+            </StackLayout>
+            
+            <WebView Grid.Column="0" 
+                     Grid.ColumnSpan="2" 
+                     Grid.Row="1"
+                     x:Name="kanbanWebView"/>
+            <WebView  Grid.Column="0" 
+                      Grid.ColumnSpan="2" 
+                      Grid.Row="2" 
+                      x:Name="grafanaWebView"/>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

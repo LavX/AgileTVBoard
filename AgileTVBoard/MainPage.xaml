@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:AgileTVBoard;assembly=AgileTVBoard"
+             xmlns:local="clr-namespace:AgileTVBoard.Views;assembly=AgileTVBoard"
              mc:Ignorable="d"
              x:Class="AgileTVBoard.MainPage">
 
     <MasterDetailPage.Master>
-        <ContentPage Padding="20" Title="Menu">
+        <ContentPage Padding="20" Title="Menu" BackgroundColor="Black">
             <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
                 <ListView x:Name="MenuList" 
                   HasUnevenRows="True"
@@ -18,22 +18,22 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
                                     <Image Source="{Binding IconSource}"/>
-                                    <Label Text="{Binding Title}" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Title}" VerticalOptions="Center" TextColor="White"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Text="DEBUG: Purge DB" Clicked="DEBUGButtonPurge_Clicked" />
-                <Label Text="Born To Race" VerticalOptions="EndAndExpand" HorizontalOptions="Center" FontSize="Title" />
-                <Label x:Name="AppVersion" HorizontalOptions="Center" FontSize="Small"/>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage>
+        <NavigationPage
+                xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat;assembly=Xamarin.Forms.Core"
+                android:NavigationPage.BarHeight="40"
+                android:NavigationPage.BarBackgroundColor="Black">
             <x:Arguments>
-                <local:HomePage />
+                <local:DashboardPage />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>
